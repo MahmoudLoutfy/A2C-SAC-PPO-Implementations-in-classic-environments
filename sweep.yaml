@@ -1,0 +1,57 @@
+program: Train.py
+method: grid
+metric:
+  name: episodic_return
+  goal: maximize
+
+parameters:
+  env-id:
+    values: [CartPole-v1, Pendulum-v1]
+  
+  algo:
+    value: sac
+  
+  seed:
+    value: 42
+  
+  track:
+    value: true
+  
+  wandb-project:
+    value: sac-cartpole-pendulum
+  
+  cuda:
+    value: false
+
+  total-timesteps:
+    value: 100000
+  
+  discretize:
+    value: true
+  
+  bins:
+    value: 5
+  
+  lr:
+    values: [1e-4, 3e-4]
+
+  gamma:
+    values: [0.99, 0.995]
+  
+
+  batch-size:
+    values: [128, 256]
+
+  buffer-size:
+    value: 100000
+  
+
+  tau:
+    value: 0.005
+  
+
+  init-alpha:
+    values: [0.2, 0.5]
+  
+  learning-starts:
+    values: [1000, 5000]

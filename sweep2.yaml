@@ -1,0 +1,52 @@
+program: Train.py
+method: grid
+metric:
+  name: episodic_return
+  goal: maximize
+
+parameters:
+  env-id:
+    value: "MountainCar-v0"
+  
+  seed:
+    value: 42
+  
+  cuda:
+    value: true
+  
+  total-timesteps:
+    value: 40000
+  
+  track:
+    value: true
+  
+  wandb-project:
+    value: "sac-mountaincar"
+  
+  
+  buffer-size:
+    value: 100000
+  
+  lr:
+    values: [1e-4, 3e-4, 5e-4]
+  
+  init-alpha:
+    values: [0.2, 0.5]
+  
+  batch-size:
+    values: [128, 256]
+  
+  n-step:
+    values: [3, 5]
+  
+  gamma:
+    value: 0.999
+  
+  tau:
+    value: 0.005
+  
+  learning-starts:
+    value: 10000
+  
+  grad-steps:
+    value: 4

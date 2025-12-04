@@ -1,0 +1,45 @@
+program: Train.py
+method: grid
+metric:
+  name: episodic_return
+  goal: maximize
+parameters:
+  algo:
+    value: ppo
+  total-timesteps:
+    value: 400000
+
+  env-id:
+    values:
+      - CartPole-v1
+      - Acrobot-v1
+      - Pendulum-v1
+
+
+  lr-actor:
+    values: [0.0001, 0.0003]
+  
+
+  lr-critic:
+    values: [0.0003, 0.001]
+
+
+  ent-coef:
+    values: [0.0, 0.01, 0.1]
+
+
+  batch-size:
+    values: [2048, 4096]
+
+
+  k-epochs:
+    values: [4, 10]
+
+  gamma:
+    value: 0.99
+  eps-clip:
+    value: 0.2
+  discretize:
+    value: true
+  bins:
+    value: 11

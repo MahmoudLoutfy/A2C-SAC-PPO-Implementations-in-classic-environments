@@ -1,0 +1,55 @@
+program: Train.py
+method: grid
+metric:
+  name: episodic_return
+  goal: maximize
+
+parameters:
+  env-id:
+    value: "Acrobot-v1"
+  
+  seed:
+    value: 42
+  
+  cuda:
+    value: false
+  
+  total-timesteps:
+    value: 40000
+  
+  track:
+    value: true
+  
+  wandb-project:
+    value: "acrobot-sweep"
+  
+  buffer-size:
+    value: 200000 
+  
+
+  lr:
+    values: [1e-4, 3e-4, 6e-4]
+  
+
+  init-alpha:
+    values: [0.5, 1.0]
+  
+
+  grad-steps:
+    values: [2, 4]
+
+  n-step:
+    values: [3, 5]
+  
+
+  gamma:
+    value: 0.99  
+  
+  tau:
+    value: 0.005
+  
+  learning-starts:
+    value: 25000  
+  
+  batch-size:
+    value: 512  
